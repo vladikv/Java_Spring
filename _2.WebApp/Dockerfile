@@ -1,14 +1,14 @@
-# Use an appropriate base image with Java (e.g., OpenJDK)
-FROM openjdk:20-jdk-slim
 
-# Set the working directory within the container
+FROM eclipse-temurin:26-jdk-alpine
+
+# Робоча директорія в контейнері
 WORKDIR /app
 
-# Copy the Spring Boot application JAR file into the container
+# Копіюємо зібраний JAR
 COPY target/spu123.jar app.jar
 
-# Expose the port your Spring Boot application listens on
+# Порт Spring Boot
 EXPOSE 8080
 
-# Define the command to run your Spring Boot application
+# Запуск
 CMD ["java", "-jar", "app.jar"]

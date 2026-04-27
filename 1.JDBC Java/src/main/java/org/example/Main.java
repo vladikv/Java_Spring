@@ -6,9 +6,9 @@ import java.util.Scanner;
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class Main {
-    static String databaseName="java_salo";
+    static String databaseName="java";
     public static void main(String[] args) {
-        System.out.println("Привіт козаки");
+//        System.out.println("Привіт козаки");
         // Load the MariaDB JDBC driver
         //createDatabase();
         //createTable();
@@ -20,7 +20,7 @@ public class Main {
         String password="123456";
         String dbName = "";
         try(Connection con = DriverManager.getConnection(url, user, password)) {
-            System.out.println("Вкажіть назву БД:");
+            System.out.println("Enter name of DB:");
             Scanner in = new Scanner(System.in);
             dbName = in.nextLine();
             // Create a Statement object to execute SQL statements
@@ -33,7 +33,7 @@ public class Main {
             boolean databaseExists = rs.next();
             rs.close();
             if (databaseExists) {
-                System.out.println("-------База з даним ім'ям уже існує-------.");
+                System.out.println("-------Db with this name already exists-------.");
             } else {
                 // SQL query to create the new database
                 String createDbQuery = "CREATE DATABASE " + dbName;
@@ -83,11 +83,11 @@ public class Main {
             // Create a statement
             PreparedStatement statement = con.prepareStatement("INSERT INTO users (username, email) VALUES (?, ?)");
             // Set the parameters
-            statement.setString(1, "ivan");
-            statement.setString(2, "ivan@example.com");
+            statement.setString(1, "vlad");
+            statement.setString(2, "vlad@example.com");
             // Execute the statement
             int rowsAffected = statement.executeUpdate();
-            System.out.println("Успішно додано дані");
+            System.out.println("Data added successfully");
             stmt.close();
         }
         catch(Exception ex) {
