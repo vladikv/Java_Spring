@@ -1,6 +1,6 @@
 # 🛒 E-Commerce Management Platform
 
-> Full-Stack Web Application · 2025
+> Full-Stack Web Application · 2026
 
 ## 📋 Description
 
